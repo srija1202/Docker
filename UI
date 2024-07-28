@@ -1,0 +1,23 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '14.x' # Specify Node.js version
+
+- script: |
+    npm install
+    npm run build
+  displayName: 'Install and Build'
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: '<your-azure-subscription>'
+    appType: 'webApp'
+    WebAppName: '<your-ui-app-service-name>'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/build'
