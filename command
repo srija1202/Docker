@@ -11,3 +11,5 @@ az container show --resource-group <your-resource-group> --name movieticketbooki
 az container logs --resource-group <your-resource-group> --name movieticketbooking
 
 az acr login --name <your-registry-name> --expose-token
+
+az ad sp create-for-rbac --name "<service-principal-name>" --role contributor --scopes /subscriptions/<subscription-id>
