@@ -9,3 +9,5 @@ docker push <your-registry-name>.azurecr.io/movieticketbooking:latest
 az container show --resource-group <your-resource-group> --name movieticketbooking
 
 az container logs --resource-group <your-resource-group> --name movieticketbooking
+
+az acr login --name <your-registry-name> --expose-token
