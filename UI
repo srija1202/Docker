@@ -19,5 +19,5 @@ steps:
     ConnectionType: 'AzureRM'
     azureSubscription: '<your-azure-subscription>'
     appType: 'webApp'
-    WebAppName: '<your-ui-app-service-name>'
+    WebAppName: 'MovieTicketBookingUI'
     packageForLinux: '$(System.DefaultWorkingDirectory)/build'
